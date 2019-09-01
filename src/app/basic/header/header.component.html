@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item" routerLinkActive="active"   [routerLinkActiveOptions]='{exact:true}'> 
+          <a class="nav-link" routerLink="/">Employee Management System</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="this.authService.checkLogin()">
+        <a class="nav-link" routerLink="view">View Employees</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="this.authService.checkLogin()">
+        <a class="nav-link" routerLink="create">Create Employee</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="!this.authService.checkLogin()">
+        <a class="nav-link" routerLink="login">Login</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="this.authService.checkLogin()">
+        <a class="nav-link" routerLink="logout">Logout</a>
+      </li>
+    </ul>
+
+  </div>
+
+</nav>
