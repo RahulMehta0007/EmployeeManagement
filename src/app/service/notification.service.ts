@@ -25,6 +25,10 @@ export class NotificationService {
     {progressBar:true,progressAnimation:'increasing',timeOut:2000});
   }
 
-
+  errorMsg()
+  {
+    this.toasterService.error('Please enter valid credentials','Invalid Credentials',
+    {progressBar:true,progressAnimation:'increasing',timeOut:2000});
+  }
 
 }

@@ -63,7 +63,11 @@ export class UpdateEmployeeComponent implements OnInit, OnDestroy {
     this.route.navigate(['/']);
   }
   deleteEmployee() {
-    this.dataService.deleteEmployee(this.employee).subscribe((emp:Employee) => { this.toasterService.deleteMsg(emp.emp_id) });
+    let empObj = {
+      emp_id: this.updateForm.controls.empId.value, name: this.updateForm.controls.name.value,
+      salary: this.updateForm.controls.salary.value, designation: this.updateForm.controls.designation.value
+    }
+    this.dataService.deleteEmployee(this.employee).subscribe((emp:Employee) => { this.toasterService.deleteMsg(empObj.emp_id) });
     this.route.navigate(['/']);
   }
 

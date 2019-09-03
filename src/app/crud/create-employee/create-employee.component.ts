@@ -33,8 +33,9 @@ export class CreateEmployeeComponent implements OnInit {
     var empObj:Employee={emp_id:0,name:name,designation:designation,salary:salary};
     this.dataService.createEmployee(empObj).subscribe(
       (empId:number)=>{this.toasterService.createMsg(empId);}
-      this.route.navigate(['/']);
+   
     );
+    this.route.navigate(['/']);
 
   }
 
